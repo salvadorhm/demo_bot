@@ -16,7 +16,7 @@ db = web.database(
     port= 3306)
 
 #Samm17_bot 
-token = ''
+token = '842675543:AAHwX8-0n7rH6-n4p8-WDUBarXExajUBtsI'
 
 # Define a few command handlers. These usually take the two arguments bot and
 # update. Error handlers also receive the raised TelegramError object in error.
@@ -60,7 +60,11 @@ def producto(bot, update):
 
 def echo(bot, update):
     try:
-        update.message.reply_text(update.message.text)
+        texto = update.message.text # almacena el texto que envio el usuario
+        if texto == "hola":
+            update.message.reply_text("Como estas?") # envia la respuesta
+        else:
+            update.message.reply_text(update.message.text) # envia el texto que recibe
         print update.message.text
         print update.message.date
         print update.message.from_user
